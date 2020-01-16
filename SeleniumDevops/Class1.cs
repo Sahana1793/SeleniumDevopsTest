@@ -15,7 +15,9 @@ namespace SeleniumDevops
         [Test]
         public void FirstTest()
         {
-            IWebDriver driver = new ChromeDriver();
+            var option = new ChromeOptions();
+            option.AddArguments("headless");
+            IWebDriver driver = new ChromeDriver(option);
             driver.Navigate().GoToUrl("https://www.youtube.com/");
 
         }
